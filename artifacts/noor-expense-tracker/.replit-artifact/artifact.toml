@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Noor Expense Tracker"
+description = "A personal Ghana cedi expense tracker for quickly recording purchases, reviewing saved spending history, and understanding category totals at a glance."
+version = "1.0.0"
+id = "artifacts/noor-expense-tracker"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21040
+
+[services.development]
+run = "pnpm --filter @workspace/noor-expense-tracker run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/noor-expense-tracker", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/noor-expense-tracker/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21040"
+BASE_PATH = "/"

@@ -1,0 +1,17 @@
+{
+  "name": "Noor Expense Tracker",
+  "short_name": "Noor",
+  "description": "A calm, quick place to notice where your Ghana cedis go.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f0e5",
+  "theme_color": "#16585a",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
